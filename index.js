@@ -14,13 +14,13 @@ const io = socketIo(server, {
 
 io.on('connection', (socket) => {
     console.log(`User connected: ${socket.id}`);
-   
+
 
     socket.on('chatMessage', (message) => {
         io.emit('chatMessage', message); // Broadcast the message to all connected clients
     });
-  });
-  app.get("/", (req,res)=>{
+});
+app.get("/", (req, res) => {
     res.send("")
-}) ;
+});
 
